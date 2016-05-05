@@ -1,6 +1,9 @@
 <div class="jumbotron">
-	<h3>Thanks for visiting. Sign up to get my essays:</h3>
-	<div class="input-group"><input type="text" class="form-control" placeholder="Email - don't worry I will never spam you" aria-describedby="basic-addon1">
-	</div>
-	
+	<% if user_signed_in? %>
+	<h2>Welcome back!</h2>
+	<% else %>
+	<h3>Thanks for visiting. </h3>
+	<%= link_to "login", new_user_session_path, class: "btn btn-default btn-lg" %>
+	<%= link_to "Sign Up", new_user_registration_path, class: "btn btn-default btn-lg" %></h3>
+	<% end %>
 </div>
