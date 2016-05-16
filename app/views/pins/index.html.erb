@@ -1,4 +1,3 @@
-
 <p id="notice"><%= notice %></p>
 <div class = "panel panel-default">
   <div class = "panel-heading">
@@ -9,7 +8,7 @@
       <thead>
         <tr>
           <th>Description</th>
-          <th></th>
+          <th>User</th>
           <th colspan="3">Options:</th>
         </tr>
       </thead>
@@ -20,7 +19,7 @@
             <td><%= pin.user.email if pin.user %></td>
             <td><%= link_to 'Show', pin, class: "btn btn-info" %></td>
             <td><%= link_to 'Edit', edit_pin_path(pin), class: "btn btn-warning" %></td>
-            <td><%= link_to 'Move to trash', pin, method: :delete, class: "btn  btn-danger" %></td>
+            <td><%= link_to 'Trash', pin, method: :delete, data: {confirm: 'You sure?'},  class: "btn  btn-danger" %></td>
           </tr>
         <% end %>
       </tbody>
